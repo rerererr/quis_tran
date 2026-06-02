@@ -1,0 +1,20 @@
+{
+  "totalSessions": 0,
+  "totalQuestions": 0,
+  "totalCorrect": 0,
+  "totalWrong": 0,
+  "modes": {
+    "30": {
+      "sessions": 0,
+      "questions": 0,
+      "correct": 0,
+      "wrong": 0
+    },
+    "247": {
+      "sessions": 0,
+      "questions": 0,
+      "correct": 0,
+      "wrong": 0
+    }
+  }
+}

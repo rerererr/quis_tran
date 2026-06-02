@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тренажер тестов</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Тренажер тестов</h1>
+
+      <section class="card">
+        <h2>Старт теста</h2>
+        <div class="row">
+          <label for="questionCountInput">Количество вопросов:</label>
+          <input id="questionCountInput" class="number-input" type="number" min="1" step="1" value="30" />
+          <button id="startQuizBtn" class="btn">Начать</button>
+          <button id="allQuestionsBtn" class="btn secondary">Все вопросы</button>
+          <button id="restartBtn" class="btn secondary">Сбросить</button>
+        </div>
+      </section>
+
+      <section class="card" id="quizSection">
+        <div class="row spread">
+          <p id="progressText">Прогресс: 0/0</p>
+          <p id="scoreText">Верно: 0 | Ошибки: 0</p>
+        </div>
+
+        <h2 id="questionText">Введите количество вопросов и нажмите "Начать"</h2>
+        <form id="answersForm" class="answers"></form>
+
+        <div class="row">
+          <button id="submitBtn" class="btn" disabled>Ответить</button>
+          <p id="feedbackText"></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Статистика (сохраняется в cookies)</h2>
+        <p id="sessionStatsText">Сессия: нет данных</p>
+        <p id="globalStatsText">Общая: загрузка...</p>
+        <div class="row">
+          <button id="resetStatsBtn" class="btn secondary">Сбросить статистику</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+  </html>

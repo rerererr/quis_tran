@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.spread {
+  justify-content: space-between;
+}
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: #6b7280;
+}
+
+.number-input {
+  width: 120px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.answers {
+  margin: 16px 0;
+  display: grid;
+  gap: 8px;
+}
+
+.answer-option {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fafafa;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.answer-option.is-correct {
+  border-color: #059669;
+  background: #ecfdf5;
+}
+
+.answer-option.is-wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.answer-option.is-missed {
+  border-color: #0d9488;
+  background: #f0fdfa;
+}
+
+#feedbackText {
+  min-height: 20px;
+  font-weight: 600;
+}
