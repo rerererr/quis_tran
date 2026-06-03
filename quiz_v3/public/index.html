@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тренажер тестов</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Тренажер тестов</h1>
+
+      <section class="card">
+        <h2>Старт теста</h2>
+        <div class="row">
+          <label for="geminiApiKeyInput">Gemini API Key:</label>
+          <input id="geminiApiKeyInput" class="text-input" type="password" placeholder="AIza..." />
+        </div>
+        <div class="row">
+          <label for="geminiModelSelect">Модель Gemini:</label>
+          <select id="geminiModelSelect" class="select-input">
+            <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="examModeSelect">Режим прохождения:</label>
+          <select id="examModeSelect" class="select-input">
+            <option value="practice">Обычный</option>
+            <option value="exam">Экзамен</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="trickyChanceInput">Каверзные вопросы (%):</label>
+          <input id="trickyChanceInput" class="number-input" type="number" min="0" max="100" step="5" value="25" />
+        </div>
+        <div class="row">
+          <label for="questionCountInput">Количество вопросов:</label>
+          <input id="questionCountInput" class="number-input" type="number" min="1" step="1" value="30" />
+          <button id="startQuizBtn" class="btn btn-start">Начать</button>
+          <button id="allQuestionsBtn" class="btn secondary">Все вопросы</button>
+          <button id="generatedQuizBtn" class="btn btn-generated">Сгенерировать вопросы нейросетью</button>
+          <button id="restartBtn" class="btn secondary">Сбросить</button>
+        </div>
+        <p id="modeText">Режим: стандартный тест</p>
+      </section>
+
+      <section class="card quiz-card" id="quizSection">
+        <div id="quizPauseOverlay" class="quiz-pause-overlay is-hidden" aria-hidden="true">
+          <div class="quiz-pause-panel">
+            <h3>Тест на паузе</h3>
+            <p>Таймер остановлен. Ответы недоступны.</p>
+            <button type="button" id="resumeQuizBtn" class="btn">Продолжить</button>
+          </div>
+        </div>
+
+        <div class="row spread" id="scoreboardRow">
+          <p id="progressText">Прогресс: 0/0</p>
+          <p id="scoreText">Верно: 0 | Ошибки: 0</p>
+          <p id="timerText">Таймер: 00:00</p>
+        </div>
+
+        <h2 id="questionText">Введите количество вопросов и нажмите "Начать"</h2>
+        <form id="answersForm" class="answers"></form>
+
+        <div class="row">
+          <button id="submitBtn" class="btn" disabled>Ответить</button>
+          <button id="nextQuestionBtn" class="btn secondary" disabled>Следующий вопрос</button>
+          <button type="button" id="pauseQuizBtn" class="btn secondary is-hidden">Пауза</button>
+          <p id="feedbackText"></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Статистика (сохраняется в cookies)</h2>
+        <p id="sessionStatsText">Сессия: нет данных</p>
+        <p id="globalStatsText">Общая: загрузка...</p>
+        <div class="row">
+          <button id="resetStatsBtn" class="btn secondary">Сбросить статистику</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
